@@ -2,11 +2,13 @@ package com.example.projetoCrud.domain;
 
 import java.io.Serializable;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.ManyToOne;
 
 
 
@@ -25,6 +27,8 @@ public class Aluno implements Serializable {
 	
 	private String anoNascimento;
 	
+	@ManyToOne
+	@JoinColumn(name="ID_CURSO")
 	private Curso curso;
 	
 
