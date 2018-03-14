@@ -44,7 +44,7 @@ public class AlunoResource {
 	
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Void> insert( @RequestBody AlunoDTO objDto) {
+	public ResponseEntity<Void> insert(@Valid @RequestBody AlunoDTO objDto) {
 		Curso curso = repoCurso.findOne(objDto.getId());
 		Aluno obj = service.fromDto(objDto);
 		obj.setCurso(curso);

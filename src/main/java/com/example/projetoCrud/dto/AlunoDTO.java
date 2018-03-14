@@ -2,6 +2,9 @@ package com.example.projetoCrud.dto;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -20,12 +23,13 @@ public class AlunoDTO implements Serializable {
 
 	private Integer id;
 
-	
+	@NotNull
 	@Length(min = 5, max = 120, message = "O tamanho deve ser entre 5 e 120 caracteres")
 	private String nome;
 
 	
-	
+	@NotNull
+		
 	private int matricula;
 	
 	private String anoNascimento;
