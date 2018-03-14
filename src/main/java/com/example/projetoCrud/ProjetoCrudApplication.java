@@ -1,5 +1,6 @@
 package com.example.projetoCrud;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,9 @@ public class ProjetoCrudApplication implements CommandLineRunner {
 		Curso curso2 = new Curso(null, 50, "Serviço Social");
 		repo.save(Arrays.asList(curso1,curso2));
 		
-		Aluno aluno = new Aluno(null, "Kelvi Martins Ribeiro", 530333, "26-06-1997", curso1);
+		Aluno aluno = new Aluno(null, "Kelvi Martins Ribeiro", 530333, null, curso1);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		aluno.setAnoNascimento(sdf.parse("26/06/1997"));
 		repoAluno.save(aluno);
 	}
 }

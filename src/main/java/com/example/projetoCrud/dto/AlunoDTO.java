@@ -1,18 +1,13 @@
 package com.example.projetoCrud.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.projetoCrud.domain.Aluno;
-import com.example.projetoCrud.domain.Curso;
-import com.example.projetoCrud.repositories.AlunoRepository;
 import com.example.projetoCrud.repositories.CursoRepository;
 
 public class AlunoDTO implements Serializable {
@@ -28,11 +23,10 @@ public class AlunoDTO implements Serializable {
 	private String nome;
 
 	
-	@NotNull
-		
+	@NotNull		
 	private int matricula;
 	
-	private String anoNascimento;
+	private Date anoNascimento;
 	
 	
 	private Integer curso;
@@ -72,12 +66,12 @@ public class AlunoDTO implements Serializable {
 	}
 
 
-	public String getAnoNascimento() {
+	public Date getAnoNascimento() {
 		return anoNascimento;
 	}
 
 
-	public void setAnoNascimento(String anoNascimento) {
+	public void setAnoNascimento(Date anoNascimento) {
 		this.anoNascimento = anoNascimento;
 	}
 

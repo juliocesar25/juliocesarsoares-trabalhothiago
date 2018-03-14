@@ -1,6 +1,7 @@
 package com.example.projetoCrud.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 
@@ -25,7 +27,8 @@ public class Aluno implements Serializable {
 	
 	private int matricula;
 	
-	private String anoNascimento;
+	@JsonFormat(pattern="dd/MM/yyyy")
+	private Date anoNascimento;
 	
 	@ManyToOne
 	@JoinColumn(name="ID_CURSO")
@@ -38,7 +41,7 @@ public class Aluno implements Serializable {
 
 	
 
-	public Aluno(Integer id, String nome, int matricula, String anoNascimento, Curso curso) {
+	public Aluno(Integer id, String nome, int matricula, Date anoNascimento, Curso curso) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -73,11 +76,11 @@ public class Aluno implements Serializable {
 		this.matricula = matricula;
 	}
 
-	public String getAnoNascimento() {
+	public Date getAnoNascimento() {
 		return anoNascimento;
 	}
 
-	public void setAnoNascimento(String anoNascimento) {
+	public void setAnoNascimento(Date anoNascimento) {
 		this.anoNascimento = anoNascimento;
 	}
 
