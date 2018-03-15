@@ -24,7 +24,7 @@ import com.example.projetoCrud.services.AlunoService;
 
 @RestController
 @RequestMapping(value="/alunos")
-@CrossOrigin
+@CrossOrigin(origins="*")
 public class AlunoResource {
 	
 	@Autowired
