@@ -60,6 +60,12 @@ public class AlunoResource {
 	public ResponseEntity<Void> update(@Valid @RequestBody AlunoDTO objDto, @PathVariable Integer id) {
 		Aluno obj = repo.findOne(objDto.getId());
 		obj.setId(id);
+		obj.setAnoNascimento(objDto.getAnoNascimento());
+		obj.setMatricula(objDto.getMatricula());
+		obj.setNome(objDto.getNome());
+		Curso curso = repoCurso.findOne(objDto.getCurso());
+		obj.setCurso(curso);
+		
 		obj = service.update(obj);
 		return ResponseEntity.noContent().build();
 	}
