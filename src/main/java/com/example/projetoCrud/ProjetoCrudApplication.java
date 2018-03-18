@@ -28,10 +28,16 @@ public class ProjetoCrudApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... arg0) throws Exception {
-		Curso curso1 = new Curso(null, 20, "Sistema de informação");
-		Curso curso2 = new Curso(null, 35, "Medicina");
-		Curso curso3 = new Curso(null, 45, "Nutrição");
-		Curso curso4 = new Curso(null, 55, "Engenharia Civil");
+		Curso curso1 = new Curso(null, 20, "Sistema de informação",""
+				+ "O Bacharelado em Sistemas de Informação tem como objetivo formar profissionais para atuar de forma competente e"
+				+ " transformadora no desenvolvimento de sistemas e na gestão da tecnologia da informação nas organizações"); 
+				 
+				
+		
+		Curso curso2 = new Curso(null, 35, "Medicina","A medicina trabalha com a manutenção e a restauração da saúde. Num sentido amplo, "
+				+ "lida com a prevenção e cura das doenças humanas. O médico investiga a natureza e as causas das doenças.");
+		Curso curso3 = new Curso(null, 45, "Nutrição","O nutricionista investiga e controla a relação do homem com o alimento para preservar sua saúde");
+		Curso curso4 = new Curso(null, 55, "Engenharia Civil","O engenheiro civil projeta, gerencia e executa obras como casas, prédios, pontes, viadutos, estradas e barragens. ");
 		repo.save(Arrays.asList(curso1,curso2,curso3,curso4));
 		
 		

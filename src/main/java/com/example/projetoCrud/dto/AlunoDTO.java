@@ -2,6 +2,8 @@ package com.example.projetoCrud.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -25,6 +27,8 @@ public class AlunoDTO implements Serializable {
 	@NotNull		
 	private int matricula;	
 	
+	@Min(0)
+	@Max(10)	
 	private float cr;
 	
 	private Integer estadoCivil;
