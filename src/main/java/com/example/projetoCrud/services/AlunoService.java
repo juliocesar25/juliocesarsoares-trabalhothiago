@@ -49,7 +49,7 @@ public class AlunoService {
 	}
 	
 	public Aluno fromDto(AlunoDTO dto) {
-		Aluno al = new Aluno(dto.getId(), dto.getNome(), dto.getMatricula(), null,dto.getCr(),null);
+		Aluno al = new Aluno(dto.getId(), dto.getNome(), dto.getMatricula(), null,dto.getCr(),dto.getEstadoCivil());
 		Curso curso = cursoRepo.findOne(dto.getCurso());
 		al.setCurso(curso);
 		return al;

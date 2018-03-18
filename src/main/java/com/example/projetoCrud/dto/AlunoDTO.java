@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.example.projetoCrud.domain.enums.EstadoCivil;
 import com.example.projetoCrud.repositories.CursoRepository;
 
 public class AlunoDTO implements Serializable {
@@ -25,6 +26,8 @@ public class AlunoDTO implements Serializable {
 	private int matricula;	
 	
 	private float cr;
+	
+	private Integer estadoCivil;
 	
 	private Integer curso;
 
@@ -55,6 +58,20 @@ public class AlunoDTO implements Serializable {
 	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
+	public float getCr() {
+		return cr;
+	}
+	
+	public void setCr(float cr) {
+		this.cr = cr;
+	}
+	public EstadoCivil getEstadoCivil() {
+		return EstadoCivil.toEnum(estadoCivil);
+	}
+	public void setEstadoCivil(EstadoCivil estadoCivil) {
+		this.estadoCivil = estadoCivil.getCod();
+	}
+	
 
 	public Integer getCurso() {
 		return curso;
@@ -65,12 +82,4 @@ public class AlunoDTO implements Serializable {
 		this.curso = curso;
 	}
 
-	public float getCr() {
-		return cr;
-	}
-
-	public void setCr(float cr) {
-		this.cr = cr;
-	}
-	
 }

@@ -23,13 +23,14 @@ public class Aluno implements Serializable {
 
 	private int matricula;
 
+	private float cr;
+	
+	private Integer estadoCivil;
+	
 	@ManyToOne
 	@JoinColumn(name = "ID_CURSO")
 	private Curso curso;
 
-	private float cr;
-	
-	private Integer estadoCivil;
 
 	public Aluno() {
 		super();
@@ -40,9 +41,9 @@ public class Aluno implements Serializable {
 		this.id = id;
 		this.nome = nome;
 		this.matricula = matricula;
-		this.curso = curso;
 		this.cr = cr;
 		this.estadoCivil = (estadoCivil==null) ? null : estadoCivil.getCod();
+		this.curso = curso;
 	}
 
 	public Integer getId() {
@@ -68,19 +69,10 @@ public class Aluno implements Serializable {
 	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
-
-	public Curso getCurso() {
-		return curso;
-	}
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
-
 	public float getCr() {
 		return cr;
 	}
-
+	
 	public void setCr(float cr) {
 		this.cr = cr;
 	}
@@ -92,5 +84,14 @@ public class Aluno implements Serializable {
 		this.estadoCivil = estadoCivil.getCod();
 	}
 	
+
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
 
 }
