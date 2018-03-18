@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.example.projetoCrud.domain.enums.EstadoCivil;
+
 @Entity
 public class Aluno implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -26,18 +28,21 @@ public class Aluno implements Serializable {
 	private Curso curso;
 
 	private float cr;
+	
+	private Integer estadoCivil;
 
 	public Aluno() {
 		super();
 	}
 
-	public Aluno(Integer id, String nome, int matricula, Curso curso, float cr) {
+	public Aluno(Integer id, String nome, int matricula, Curso curso, float cr, EstadoCivil estadoCivil) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.matricula = matricula;
 		this.curso = curso;
 		this.cr = cr;
+		this.estadoCivil = (estadoCivil==null) ? null : estadoCivil.getCod();
 	}
 
 	public Integer getId() {
@@ -78,6 +83,13 @@ public class Aluno implements Serializable {
 
 	public void setCr(float cr) {
 		this.cr = cr;
+	}
+	
+	public EstadoCivil getEstadoCivil() {
+		return EstadoCivil.toEnum(estadoCivil);
+	}
+	public void setEstadoCivil(EstadoCivil estadoCivil) {
+		this.estadoCivil = estadoCivil.getCod();
 	}
 	
 
