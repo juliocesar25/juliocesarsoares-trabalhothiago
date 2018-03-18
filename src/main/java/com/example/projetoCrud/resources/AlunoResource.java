@@ -23,8 +23,9 @@ import com.example.projetoCrud.repositories.CursoRepository;
 import com.example.projetoCrud.services.AlunoService;
 
 @RestController
+@CrossOrigin(origins ="*")
 @RequestMapping(value="/alunos")
-@CrossOrigin(origins="*")
+
 public class AlunoResource {
 	
 	@Autowired
@@ -59,8 +60,7 @@ public class AlunoResource {
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Void> update(@Valid @RequestBody AlunoDTO objDto, @PathVariable Integer id) {
 		Aluno obj = repo.findOne(objDto.getId());
-		obj.setId(id);
-		obj.setAnoNascimento(objDto.getAnoNascimento());
+		obj.setId(id);		
 		obj.setMatricula(objDto.getMatricula());
 		obj.setNome(objDto.getNome());
 		Curso curso = repoCurso.findOne(objDto.getCurso());

@@ -1,7 +1,6 @@
 package com.example.projetoCrud.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
@@ -21,13 +20,11 @@ public class AlunoDTO implements Serializable {
 	@NotNull
 	@Length(min = 5, max = 120, message = "O tamanho deve ser entre 5 e 120 caracteres")
 	private String nome;
-
 	
 	@NotNull		
-	private int matricula;
+	private int matricula;	
 	
-	private Date anoNascimento;
-	
+	private float cr;
 	
 	private Integer curso;
 
@@ -35,12 +32,6 @@ public class AlunoDTO implements Serializable {
 		super();
 	}
 	
-
-	
-	
-
-
-
 	public Integer getId() {
 		return id;
 	}
@@ -65,17 +56,6 @@ public class AlunoDTO implements Serializable {
 		this.matricula = matricula;
 	}
 
-
-	public Date getAnoNascimento() {
-		return anoNascimento;
-	}
-
-
-	public void setAnoNascimento(Date anoNascimento) {
-		this.anoNascimento = anoNascimento;
-	}
-
-
 	public Integer getCurso() {
 		return curso;
 	}
@@ -84,7 +64,13 @@ public class AlunoDTO implements Serializable {
 	public void setCurso(Integer curso) {
 		this.curso = curso;
 	}
-	
-	
 
+	public float getCr() {
+		return cr;
+	}
+
+	public void setCr(float cr) {
+		this.cr = cr;
+	}
+	
 }

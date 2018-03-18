@@ -1,6 +1,5 @@
 package com.example.projetoCrud.services;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +56,7 @@ public class AlunoService {
 		}
 		
 		public Aluno fromDto(AlunoDTO dto) {
-			Aluno al = new Aluno(dto.getId(), dto.getNome(), dto.getMatricula(), dto.getAnoNascimento(), null);
+			Aluno al = new Aluno(dto.getId(), dto.getNome(), dto.getMatricula(), null,dto.getCr());
 			Curso curso = cursoRepo.findOne(dto.getCurso());
 			al.setCurso(curso);
 			return al;
