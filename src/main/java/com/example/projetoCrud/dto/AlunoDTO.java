@@ -20,8 +20,7 @@ public class AlunoDTO implements Serializable {
 
 	private Integer id;
 
-	@NotNull
-	@Length(min = 5, max = 120, message = "O tamanho deve ser entre 5 e 120 caracteres")
+	@NotNull	
 	private String nome;
 	
 	@NotNull		
